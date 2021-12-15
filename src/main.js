@@ -17,12 +17,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/productos", (req, res) => {
-  res.render("datosProductos.pug", {
-    productos,
-  });
-});
-
 app.post("/", (req, res) => {
   const { title, price, thumbnail } = req.body;
 

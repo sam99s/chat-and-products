@@ -28,17 +28,17 @@ html
             h1 Productos
             if productos.length != 0
                 table
-                    tr(class="container text-center")
+                    tr
                         th(class="col4") Title 
                         th(class="col4") Price
                         th(class="col4") Thumbnail
 
                     each producto in productos
-                        tr(class="container text-center")
+                        tr
                             td(class="col-4") #{producto.title}
                             td(class="col-4") $#{producto.price}
                             td(class="col-4") 
-                                img(src=producto.thumbnail)
+                                img(src=producto.thumbnail class="image-products")
             else
                 p(class="fs-4") No hay productos
 
@@ -46,10 +46,10 @@ html
             div#chat-window
                 div#output
                 div#actions
-
-            input#username(class="inputText col-12" type="email" placeholder="Username")
-            input#message(class="inputText col-12" type="text" placeholder="Message")
-            button#send(class="buttonSend") Send   
+            form
+                input#username(class="inputText col-12" type="email" placeholder="Username" required)
+                input#message(class="inputText col-12" type="text" placeholder="Message")
+                button#send(class="buttonSend" type="submit") Send   
 
         script(src="/socket.io/socket.io.js" charset="utf-8")
         script(src="/utils/chat.js" charset="utf-8")
